@@ -4,16 +4,10 @@
     Find the sum of all the multiples of 3 or 5 below 1000.
 */
 
-let multiples_of_3_and_5 = [];
-for (let n = 0; n < 1000; n++) {
-    if (n%3 == 0 || n%5 == 0) {
-        multiples_of_3_and_5.push(n);
-    }
-}
-
 let sum_of_multiples = 0;
-for (const n of multiples_of_3_and_5) {
-    sum_of_multiples += n;
+
+for (let n = 0; n < 1000; n++) {
+    sum_of_multiples += (n%3 == 0 || n%5 == 0) ? n : 0
 }
 
 console.log(sum_of_multiples);
