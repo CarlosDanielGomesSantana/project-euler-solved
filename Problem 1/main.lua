@@ -4,17 +4,12 @@
     Find the sum of all the multiples of 3 or 5 below 1000.
 ]]--
 
-local multiples_of_3_and_5 = {}
 local sum_of_multiples = 0
 
 for n = 1, 999 do
-    if n%3 == 0 or n%5 == 0 then
-        table.insert(multiples_of_3_and_5, n)
-    end
-end
-
-for _, value in ipairs(multiples_of_3_and_5) do
-    sum_of_multiples = sum_of_multiples + value
+    sum_of_multiples = (
+        (n%3 == 0 or n%5 == 0) and n or 0
+    ) + sum_of_multiples
 end
 
 print(sum_of_multiples)
